@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+    <style>
+        .d {
+            /* display: inline;
+    background:yellowgreen;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    width: 40%;
+    height: 400%; */
+
+
+            width: 250px;
+            height: 370px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+                0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            text-align: center;
+            margin-left: 35%;
+            margin-top: 10%;
+        }
+
+       .t {
+            height: 30px;
+            width: 30px;
+            text-align: center;
+            margin: 1px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+                0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                color: white;
+                font-size: x-large;
+        }
+        .i{
+           height: 20px; 
+           box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+                0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+        #result{
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+                0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                color:black;
+                font-size: x-large;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="d"><br><br>
+        <h1>Calculator</h1>
+        <label >First number</label>
+        <input class="i" id="num1" type="number"><br><br>
+        <label >second number</label>
+        <input class="i" id="num2" type="number"><br><br><br>
+
+        
+        <button class="t" id="result+" style="background:  black"> +</button>
+        <button class="t"  id="result-" style="background: black"> -</button>
+        <button class="t"  id="result*" style="background: black"> *</button>
+        <button class="t"  id="result/" style="background: black"> /</button>
+        <br><br><br>
+        <button id="result" style="background: red;" >result </button>
+        
+
+    </nav>
+    <script>
+      A=document.getElementById("result+");
+      A.addEventListener("click" , sum);
+      B=document.getElementById("result-");
+      B.addEventListener("click" , p);
+      C=document.getElementById("result*");
+      C.addEventListener("click" , mult);
+      D=document.getElementById("result/");
+      D.addEventListener("click" ,div );
+
+        function sum() {
+            a = document.getElementById("num1");
+            b = document.getElementById("num2");
+            r = parseInt(a.value) + parseInt(b.value);
+            document.getElementById("result").innerHTML = r
+        }
+         function div() {
+            a = document.getElementById("num1");
+            b = document.getElementById("num2");
+            r = parseInt(a.value) / parseInt(b.value);
+            document.getElementById("result").innerHTML = r
+        }
+        function mult() {
+            a = document.getElementById("num1");
+            b = document.getElementById("num2");
+            r = parseInt(a.value) * parseInt(b.value);
+            document.getElementById("result").innerHTML = r
+        }
+        function p() {
+            a = document.getElementById("num1");
+            b = document.getElementById("num2");
+            r = parseInt(a.value) - parseInt(b.value);
+            document.getElementById("result").innerHTML = r
+        }
+
+    </script>
+
+</body>
+
+</html>
